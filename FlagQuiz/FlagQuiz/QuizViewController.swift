@@ -1,23 +1,26 @@
-//
-//  ViewController.swift
+//  QuizViewController.swift
 //  FlagQuiz
 //
-//  Created by Gary Shirk on 1/25/15.
-//  Copyright (c) 2015 garyshirk. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class QuizViewController: UIViewController {
+    
+    @IBOutlet weak var flagImageView: UIImageView!
+    
+    @IBOutlet weak var questionNumberLabel: UILabel!
+    
+    @IBOutlet weak var answerLabel: UILabel!
+    
+    @IBOutlet var segmentedControls: [UISegmentedControl]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    @IBAction func submitGuess(sender: AnyObject) {
+        
     }
 
 

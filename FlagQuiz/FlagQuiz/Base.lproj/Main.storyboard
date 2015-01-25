@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ISc-Ls-p4r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Flag Quiz-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlagQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuizViewController" customModule="FlagQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,7 +16,106 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess the Country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fq4-I4-zns">
+                                <rect key="frame" x="16" y="77" width="568" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="pOg-TT-9N9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xkO-IT-Dfl">
+                                <rect key="frame" x="16" y="121" width="568" height="219"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="219" id="Y08-6n-1HA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 1 of 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mm6-9J-bOf">
+                                <rect key="frame" x="16" y="366" width="568" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="qos-4n-gSu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1pX-aR-yoB">
+                                <rect key="frame" x="16" y="410" width="568" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="submitGuess:" destination="BYZ-38-t0r" eventType="valueChanged" id="5fG-ec-5Bi"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TDd-qX-pe6">
+                                <rect key="frame" x="16" y="446" width="568" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="submitGuess:" destination="BYZ-38-t0r" eventType="valueChanged" id="WP9-lu-8qA"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jd9-qI-D1M">
+                                <rect key="frame" x="16" y="482" width="568" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="submitGuess:" destination="BYZ-38-t0r" eventType="valueChanged" id="wcA-aY-btM"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vqt-CD-fgQ">
+                                <rect key="frame" x="16" y="518" width="568" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="submitGuess:" destination="BYZ-38-t0r" eventType="valueChanged" id="Eou-7U-0it"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycm-yu-Rkg">
+                                <rect key="frame" x="16" y="559" width="568" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fq4-I4-zns" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="3H8-Or-8TR"/>
+                            <constraint firstItem="1pX-aR-yoB" firstAttribute="trailing" secondItem="TDd-qX-pe6" secondAttribute="trailing" id="3eJ-iS-QmC"/>
+                            <constraint firstItem="ycm-yu-Rkg" firstAttribute="top" secondItem="vqt-CD-fgQ" secondAttribute="bottom" constant="13" id="5sb-4H-Bjs"/>
+                            <constraint firstItem="vqt-CD-fgQ" firstAttribute="top" secondItem="jd9-qI-D1M" secondAttribute="bottom" constant="8" id="97M-ei-W5W"/>
+                            <constraint firstItem="Fq4-I4-zns" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9ru-Xf-aff"/>
+                            <constraint firstItem="ycm-yu-Rkg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="C2q-Q3-vhR"/>
+                            <constraint firstItem="vqt-CD-fgQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DVl-sX-lfH"/>
+                            <constraint firstItem="TDd-qX-pe6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ekh-eh-fzf"/>
+                            <constraint firstItem="xkO-IT-Dfl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="HM6-UI-q4h"/>
+                            <constraint firstItem="vqt-CD-fgQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="HUR-rR-MUT"/>
+                            <constraint firstItem="TDd-qX-pe6" firstAttribute="top" secondItem="1pX-aR-yoB" secondAttribute="bottom" constant="8" id="IJ7-9M-L4T"/>
+                            <constraint firstItem="xkO-IT-Dfl" firstAttribute="top" secondItem="Fq4-I4-zns" secondAttribute="bottom" constant="8" symbolic="YES" id="KIp-Dt-B1L"/>
+                            <constraint firstItem="1pX-aR-yoB" firstAttribute="leading" secondItem="TDd-qX-pe6" secondAttribute="leading" id="Miq-je-5Yd"/>
+                            <constraint firstItem="mm6-9J-bOf" firstAttribute="leading" secondItem="1pX-aR-yoB" secondAttribute="leading" id="QwJ-AJ-aLb"/>
+                            <constraint firstItem="TDd-qX-pe6" firstAttribute="leading" secondItem="jd9-qI-D1M" secondAttribute="leading" id="SO7-VE-Div"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ycm-yu-Rkg" secondAttribute="bottom" constant="2" id="UPn-zt-JFE"/>
+                            <constraint firstItem="Fq4-I4-zns" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Wrx-V9-v7B"/>
+                            <constraint firstItem="ycm-yu-Rkg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="X9R-dx-LV8"/>
+                            <constraint firstItem="1pX-aR-yoB" firstAttribute="trailing" secondItem="mm6-9J-bOf" secondAttribute="trailing" id="eax-Zx-knC"/>
+                            <constraint firstItem="jd9-qI-D1M" firstAttribute="trailing" secondItem="TDd-qX-pe6" secondAttribute="trailing" id="izg-xR-FZU"/>
+                            <constraint firstItem="jd9-qI-D1M" firstAttribute="top" secondItem="TDd-qX-pe6" secondAttribute="bottom" constant="8" id="jd1-Rh-Xpx"/>
+                            <constraint firstItem="1pX-aR-yoB" firstAttribute="top" secondItem="mm6-9J-bOf" secondAttribute="bottom" constant="8" symbolic="YES" id="rYB-LX-kW4"/>
+                            <constraint firstItem="xkO-IT-Dfl" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uX3-mL-7gs"/>
+                            <constraint firstItem="mm6-9J-bOf" firstAttribute="top" secondItem="xkO-IT-Dfl" secondAttribute="bottom" constant="26" id="v0s-ej-WXA"/>
+                            <constraint firstItem="jd9-qI-D1M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vXg-Ve-1M3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Flag Quiz" id="kDK-zf-FEN">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="qfW-AY-rGT">
@@ -24,6 +124,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="answerLabel" destination="ycm-yu-Rkg" id="FvO-Ue-82V"/>
+                        <outlet property="flagImageView" destination="xkO-IT-Dfl" id="xcv-pU-3nY"/>
+                        <outlet property="questionNumberLabel" destination="mm6-9J-bOf" id="dL3-7N-COV"/>
+                        <outletCollection property="segmentedControls" destination="1pX-aR-yoB" collectionClass="NSMutableArray" id="pSW-oc-4qS"/>
+                        <outletCollection property="segmentedControls" destination="TDd-qX-pe6" collectionClass="NSMutableArray" id="bsk-bR-nx6"/>
+                        <outletCollection property="segmentedControls" destination="jd9-qI-D1M" collectionClass="NSMutableArray" id="PFa-dW-Mef"/>
+                        <outletCollection property="segmentedControls" destination="vqt-CD-fgQ" collectionClass="NSMutableArray" id="zmH-h7-xLV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -32,7 +141,7 @@
         <!--Settings-->
         <scene sceneID="JdC-PR-59p">
             <objects>
-                <viewController title="Settings" id="eUh-uh-KyP" sceneMemberID="viewController">
+                <viewController title="Settings" id="eUh-uh-KyP" customClass="SettingsViewController" customModule="FlagQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4AE-6U-vb1"/>
                         <viewControllerLayoutGuide type="bottom" id="aoQ-gj-YQq"/>
@@ -40,8 +149,131 @@
                     <view key="view" contentMode="scaleToFill" id="lB6-eG-ClK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of guesses per flag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbn-IJ-cDi">
+                                <rect key="frame" x="16" y="72" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xAb-Lk-XCQ">
+                                <rect key="frame" x="148" y="101" width="304" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="304" id="1Jj-bV-A8D"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="2"/>
+                                    <segment title="4"/>
+                                    <segment title="6"/>
+                                    <segment title="8"/>
+                                </segments>
+                                <connections>
+                                    <action selector="numberOfGuessesChanged:" destination="eUh-uh-KyP" eventType="valueChanged" id="NUC-eK-wBC"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regions to include in the quiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzI-lx-Imf">
+                                <rect key="frame" x="187" y="158" width="227" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Africa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U46-44-3Wh">
+                                <rect key="frame" x="219" y="198" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Europe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wln-u5-NOu">
+                                <rect key="frame" x="216" y="296" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="North America" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0n-Zc-lUo">
+                                <rect key="frame" x="183" y="345" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oceania" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eh-st-U0Q">
+                                <rect key="frame" x="206" y="394" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="South America" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cr4-Yc-a3o">
+                                <rect key="frame" x="184" y="443" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XLw-mR-knF">
+                                <rect key="frame" x="320" y="193" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchChanged:" destination="eUh-uh-KyP" eventType="valueChanged" id="75G-8f-DH8"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wko-xd-rby">
+                                <rect key="frame" x="320" y="242" width="51" height="31"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4P9-eP-5jQ">
+                                <rect key="frame" x="320" y="291" width="51" height="31"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qw8-8c-mI7">
+                                <rect key="frame" x="320" y="340" width="51" height="31"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zZa-gf-VUT">
+                                <rect key="frame" x="320" y="389" width="51" height="31"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4QD-v4-fjE">
+                                <rect key="frame" x="320" y="438" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kL-Ll-LqB">
+                                <rect key="frame" x="227" y="247" width="33" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XLw-mR-knF" firstAttribute="leading" secondItem="U46-44-3Wh" secondAttribute="trailing" constant="56" id="1Ta-cR-u4Y"/>
+                            <constraint firstItem="XLw-mR-knF" firstAttribute="top" secondItem="IzI-lx-Imf" secondAttribute="bottom" constant="14" id="25L-IX-Yci"/>
+                            <constraint firstItem="5kL-Ll-LqB" firstAttribute="leading" secondItem="U46-44-3Wh" secondAttribute="leading" constant="8" id="3Vn-xX-HqA"/>
+                            <constraint firstItem="Xbn-IJ-cDi" firstAttribute="trailing" secondItem="lB6-eG-ClK" secondAttribute="trailingMargin" id="4Br-rd-8MN"/>
+                            <constraint firstItem="Xbn-IJ-cDi" firstAttribute="leading" secondItem="lB6-eG-ClK" secondAttribute="leadingMargin" id="8sh-9l-bMT"/>
+                            <constraint firstItem="Wln-u5-NOu" firstAttribute="leading" secondItem="5kL-Ll-LqB" secondAttribute="leading" constant="-11" id="9dk-QX-Uoy"/>
+                            <constraint firstItem="XLw-mR-knF" firstAttribute="centerY" secondItem="U46-44-3Wh" secondAttribute="centerY" id="Ddw-oj-RLo"/>
+                            <constraint firstItem="d0n-Zc-lUo" firstAttribute="centerY" secondItem="Qw8-8c-mI7" secondAttribute="centerY" id="MVh-Bq-jPV"/>
+                            <constraint firstItem="4P9-eP-5jQ" firstAttribute="centerY" secondItem="Wln-u5-NOu" secondAttribute="centerY" id="Mdg-lQ-1tp"/>
+                            <constraint firstItem="zZa-gf-VUT" firstAttribute="leading" secondItem="4QD-v4-fjE" secondAttribute="leading" id="Qje-ri-9xs"/>
+                            <constraint firstItem="Wko-xd-rby" firstAttribute="top" secondItem="XLw-mR-knF" secondAttribute="bottom" constant="18" id="Rlm-lj-zFc"/>
+                            <constraint firstItem="IzI-lx-Imf" firstAttribute="centerX" secondItem="U46-44-3Wh" secondAttribute="centerX" constant="59.5" id="Uo1-up-XRZ"/>
+                            <constraint firstItem="xAb-Lk-XCQ" firstAttribute="centerX" secondItem="IzI-lx-Imf" secondAttribute="centerX" id="V9Y-78-SE1"/>
+                            <constraint firstItem="Xbn-IJ-cDi" firstAttribute="top" secondItem="4AE-6U-vb1" secondAttribute="bottom" constant="8" symbolic="YES" id="WCn-F8-Vwb"/>
+                            <constraint firstItem="d0n-Zc-lUo" firstAttribute="leading" secondItem="Wln-u5-NOu" secondAttribute="leading" constant="-33" id="Ywt-Sx-SAB"/>
+                            <constraint firstItem="Xbn-IJ-cDi" firstAttribute="centerX" secondItem="xAb-Lk-XCQ" secondAttribute="centerX" id="aq8-vi-nxA"/>
+                            <constraint firstItem="4P9-eP-5jQ" firstAttribute="top" secondItem="Wko-xd-rby" secondAttribute="bottom" constant="18" id="dET-SY-Fjk"/>
+                            <constraint firstItem="Qw8-8c-mI7" firstAttribute="leading" secondItem="zZa-gf-VUT" secondAttribute="leading" id="dVz-i1-lga"/>
+                            <constraint firstItem="Cr4-Yc-a3o" firstAttribute="centerY" secondItem="4QD-v4-fjE" secondAttribute="centerY" id="dn6-7g-i5f"/>
+                            <constraint firstItem="XLw-mR-knF" firstAttribute="leading" secondItem="Wko-xd-rby" secondAttribute="leading" id="hkU-ZL-iPo"/>
+                            <constraint firstItem="zZa-gf-VUT" firstAttribute="centerY" secondItem="0eh-st-U0Q" secondAttribute="centerY" id="hl2-Ox-BT8"/>
+                            <constraint firstItem="IzI-lx-Imf" firstAttribute="top" secondItem="xAb-Lk-XCQ" secondAttribute="bottom" constant="29" id="oRV-nS-oSf"/>
+                            <constraint firstItem="Wko-xd-rby" firstAttribute="leading" secondItem="4P9-eP-5jQ" secondAttribute="leading" id="qvF-ZO-wIN"/>
+                            <constraint firstItem="0eh-st-U0Q" firstAttribute="leading" secondItem="Cr4-Yc-a3o" secondAttribute="leading" constant="22" id="sSZ-9d-HCb"/>
+                            <constraint firstItem="d0n-Zc-lUo" firstAttribute="leading" secondItem="0eh-st-U0Q" secondAttribute="leading" constant="-23" id="tOk-jp-m9i"/>
+                            <constraint firstItem="4P9-eP-5jQ" firstAttribute="leading" secondItem="Qw8-8c-mI7" secondAttribute="leading" id="taQ-Nt-KbB"/>
+                            <constraint firstItem="xAb-Lk-XCQ" firstAttribute="top" secondItem="Xbn-IJ-cDi" secondAttribute="bottom" constant="8" symbolic="YES" id="uJH-XG-Dgj"/>
+                            <constraint firstItem="Qw8-8c-mI7" firstAttribute="top" secondItem="4P9-eP-5jQ" secondAttribute="bottom" constant="18" id="ucH-oi-LQ3"/>
+                            <constraint firstItem="4QD-v4-fjE" firstAttribute="top" secondItem="zZa-gf-VUT" secondAttribute="bottom" constant="18" id="vEd-zN-aCG"/>
+                            <constraint firstItem="zZa-gf-VUT" firstAttribute="top" secondItem="Qw8-8c-mI7" secondAttribute="bottom" constant="18" id="wL9-jr-eYP"/>
+                            <constraint firstItem="5kL-Ll-LqB" firstAttribute="centerY" secondItem="Wko-xd-rby" secondAttribute="centerY" id="xJ4-4G-E3h"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="guessesSegmentedControl" destination="xAb-Lk-XCQ" id="zoc-gL-mf8"/>
+                        <outletCollection property="switches" destination="XLw-mR-knF" collectionClass="NSMutableArray" id="O1P-gH-2we"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkJ-pM-CPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
