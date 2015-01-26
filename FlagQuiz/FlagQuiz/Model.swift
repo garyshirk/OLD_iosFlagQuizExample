@@ -16,14 +16,14 @@ class Model {
     // delegate reference
     private var delegate: ModelDelegate! = nil
     
-    var numberOfGuesses = 4
+    var numberOfGuesses = 8
     
     private var enabledRegions = [
         "Africa" : false,
         "Asia" : false,
         "Europe" : false,
         "North_America" : false,
-        "Oceania" : false,
+        "Oceania" : true,
         "South_America" : false
     ]
     
