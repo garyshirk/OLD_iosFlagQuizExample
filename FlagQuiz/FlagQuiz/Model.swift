@@ -16,7 +16,7 @@ class Model {
     // delegate reference
     private var delegate: ModelDelegate! = nil
     
-    var numberOfGuesses = 8
+    var numberOfGuesses = 4
     
     private var enabledRegions = [
         "Africa" : false,
@@ -27,11 +27,11 @@ class Model {
         "South_America" : false
     ]
     
-    let numberOfQuestions = 10
+    var numberOfQuestions = 10
     private var allCountries: [String] = []
     private var countriesInEnabledRegions: [String] = []
     
-    init(delegate: ModelDelegate, numberOfQuestions: Int) {
+    init(delegate: ModelDelegate) {
         
         self.delegate = delegate
         
@@ -77,6 +77,10 @@ class Model {
         return countriesInEnabledRegions
     }
     
+    func changeNumberOfQuestions(number: Int) {
+        numberOfQuestions = number
+    }
+    
     func toggleRegion(name: String) {
         enabledRegions[name] = !(enabledRegions[name]!)
         NSUserDefaults.standardUserDefaults().setObject(enabledRegions as NSDictionary, forKey: regionsKey)
@@ -100,7 +104,7 @@ class Model {
         var flagCounter = 0
         
         // add 10 random filenames (countries) to quizCountries
-        while flagCounter < numberOfGuesses {
+        while flagCounter < numberOfQuestions {
             let randomIndex = Int(arc4random_uniform(UInt32(enabledRegionCountries.count)))
             let filename = enabledRegionCountries[randomIndex]
             

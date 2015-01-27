@@ -23,7 +23,7 @@ class QuizViewController: UIViewController, ModelDelegate {
         super.viewDidLoad()
         
         // create model
-        model = Model(delegate: self, numberOfQuestions: 10)
+        model = Model(delegate: self)
         settingsChanged()
     }
     
@@ -38,6 +38,12 @@ class QuizViewController: UIViewController, ModelDelegate {
         quizCountries = model.newQuizCountries()
         correctGuesses = 0
         totalGuesses = 0
+        
+        model.numberOfQuestions = quizCountries.count
+        
+//        if quizCountries.count < model.numberOfQuestions {
+//            model.changeNumberOfQuestions(quizCountries.count)
+//        }
         
         // display appropriate number of UISegmentedControls
         for i in 0 ..< segmentedControls.count {
@@ -145,7 +151,13 @@ class QuizViewController: UIViewController, ModelDelegate {
     }
     
     func displayQuizResults() {
+        let percentString = NSNumberFormatter.localizedStringFromNumber(Double(correctGuesses) / Double(totalGuesses), numberStyle: NSNumberFormatterStyle.PercentStyle)
         
+        // UIAlertController for user input
+        let alertController = UIAlertController(title: "Quiz Results", message: String(format: "%1$i guesses, %2$@ correct", totalGuesses, percentString), preferredStyle: UIAlertControllerStyle.Alert)
+        let newQuizAction = UIAlertAction(title: "New Quiz", style: UIAlertActionStyle.Default, handler: {(action) in self.resetQuiz()})
+        alertController.addAction(newQuizAction)
+        presentViewController(alertController, animated: true, completion: nil)
     }
 
 }
