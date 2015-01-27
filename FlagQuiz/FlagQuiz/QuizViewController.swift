@@ -126,8 +126,22 @@ class QuizViewController: UIViewController, ModelDelegate {
         }
     }
     
+    // shakes the flag to visually indicate incorrect response
     func shakeFlag() {
-        
+        UIView.animateWithDuration(0.1,
+            animations: {self.flagImageView.frame.origin.x += 16})
+        UIView.animateWithDuration(0.1, delay: 0.1, options: nil,
+            animations: {self.flagImageView.frame.origin.x -= 32},
+            completion: nil)
+        UIView.animateWithDuration(0.1, delay: 0.2, options: nil,
+            animations: {self.flagImageView.frame.origin.x += 32},
+            completion: nil)
+        UIView.animateWithDuration(0.1, delay: 0.3, options: nil,
+            animations: {self.flagImageView.frame.origin.x -= 32},
+            completion: nil)
+        UIView.animateWithDuration(0.1, delay: 0.4, options: nil,
+            animations: {self.flagImageView.frame.origin.x += 16},
+            completion: nil)
     }
     
     func displayQuizResults() {
