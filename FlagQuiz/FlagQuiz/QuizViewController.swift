@@ -48,7 +48,7 @@ class QuizViewController: UIViewController, ModelDelegate {
     
     func nextQuestion() {
         questionNumberLabel.text = String(format: "Question %1d of %2d", (correctGuesses + 1), model.numberOfQuestions)
-        answerLabel.text = ""
+        answerLabel.text = "<temp>"
         correctAnswer = quizCountries.removeAtIndex(0)
         flagImageView.image = UIImage(named: correctAnswer) // next flag
         
@@ -88,11 +88,49 @@ class QuizViewController: UIViewController, ModelDelegate {
         var name = filename.componentsSeparatedByString("-")[1]
         let length: Int = countElements(name)
         name = (name as NSString).substringToIndex(length - 4) // remove .png
-        let components = name.componentsSeparatedByString("-")
+        let components = name.componentsSeparatedByString("_")
         return join(" ", components)
     }
     
-    @IBAction func submitGuess(sender: AnyObject) {
+    @IBAction func submitGuess(sender: UISegmentedControl) {
+        let guess = sender.titleForSegmentAtIndex(sender.selectedSegmentIndex)!
+        let correct = countryFromFilename(correctAnswer)
+        ++totalGuesses
+        
+        if guess != correct { //incorrect guess
+            // disable incorrect guess
+            sender.setEnabled(false, forSegmentAtIndex: sender.selectedSegmentIndex)
+            answerLabel.textColor = incorrectColor
+            answerLabel.text = "Incorrect"
+            answerLabel.alpha = 1.0
+            UIView.animateWithDuration(1.0, animations: {self.answerLabel.alpha = 0.0})
+            shakeFlag()
+        
+        } else { // correct guess
+            answerLabel.textColor = correctColor
+            answerLabel.text = guess + "!"
+            answerLabel.alpha = 1.0
+            ++correctGuesses
+            
+            // disable segmented controls
+            for segmentedControl in segmentedControls {
+                segmentedControl.enabled = false
+            }
+            
+            if correctGuesses == model.numberOfQuestions { // quiz over
+                displayQuizResults()
+            } else { // GCD to show next question after 2 seconds
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue(),
+                    {self.nextQuestion()})
+            }
+        }
+    }
+    
+    func shakeFlag() {
+        
+    }
+    
+    func displayQuizResults() {
         
     }
 

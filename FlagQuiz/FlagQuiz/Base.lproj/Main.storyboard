@@ -27,13 +27,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xkO-IT-Dfl">
-                                <rect key="frame" x="16" y="121" width="568" height="235"/>
+                                <rect key="frame" x="16" y="121" width="568" height="219"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="219" id="Y08-6n-1HA"/>
+                                    <constraint firstAttribute="height" constant="219" id="Y08-6n-1HA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 1 of 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mm6-9J-bOf">
-                                <rect key="frame" x="16" y="366" width="568" height="36"/>
+                                <rect key="frame" x="16" y="350" width="568" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="qos-4n-gSu"/>
                                 </constraints>
@@ -42,17 +42,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1pX-aR-yoB">
-                                <rect key="frame" x="16" y="410" width="568" height="29"/>
+                                <rect key="frame" x="16" y="394" width="568" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Zoa-7f-aVo"/>
+                                </constraints>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
                                 <connections>
-                                    <action selector="submitGuess:" destination="BYZ-38-t0r" eventType="valueChanged" id="5fG-ec-5Bi"/>
+                                    <action selector="submitGuess:" destination="BYZ-38-t0r" eventType="valueChanged" id="dx8-X3-1zm"/>
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TDd-qX-pe6">
-                                <rect key="frame" x="16" y="446" width="568" height="29"/>
+                                <rect key="frame" x="16" y="430" width="568" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="XuD-7w-Q5Z"/>
+                                </constraints>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -62,7 +68,10 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jd9-qI-D1M">
-                                <rect key="frame" x="16" y="482" width="568" height="29"/>
+                                <rect key="frame" x="16" y="466" width="568" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="6pg-b2-8i7"/>
+                                </constraints>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -71,8 +80,17 @@
                                     <action selector="submitGuess:" destination="BYZ-38-t0r" eventType="valueChanged" id="wcA-aY-btM"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycm-yu-Rkg">
+                                <rect key="frame" x="16" y="543" width="568" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vqt-CD-fgQ">
-                                <rect key="frame" x="16" y="518" width="568" height="29"/>
+                                <rect key="frame" x="16" y="502" width="568" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Z2G-Qk-tA6"/>
+                                </constraints>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -81,12 +99,6 @@
                                     <action selector="submitGuess:" destination="BYZ-38-t0r" eventType="valueChanged" id="Eou-7U-0it"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycm-yu-Rkg">
-                                <rect key="frame" x="16" y="559" width="568" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
