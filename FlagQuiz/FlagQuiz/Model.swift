@@ -23,7 +23,7 @@ class Model {
         "Asia" : false,
         "Europe" : false,
         "North_America" : false,
-        "Oceania" : true,
+        "Oceania" : false,
         "South_America" : false
     ]
     

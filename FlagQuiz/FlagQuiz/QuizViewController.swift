@@ -159,6 +159,13 @@ class QuizViewController: UIViewController, ModelDelegate {
         alertController.addAction(newQuizAction)
         presentViewController(alertController, animated: true, completion: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showSettings" {
+            let controller = segue.destinationViewController as SettingsViewController
+            controller.model = model
+        }
+    }
 
 }
 

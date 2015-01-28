@@ -227,18 +227,33 @@
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wko-xd-rby">
                                 <rect key="frame" x="320" y="242" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchChanged:" destination="eUh-uh-KyP" eventType="valueChanged" id="Xqp-Fv-fov"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4P9-eP-5jQ">
                                 <rect key="frame" x="320" y="291" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchChanged:" destination="eUh-uh-KyP" eventType="valueChanged" id="eBj-ct-Z4y"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qw8-8c-mI7">
                                 <rect key="frame" x="320" y="340" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchChanged:" destination="eUh-uh-KyP" eventType="valueChanged" id="9gp-Hd-Pbb"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zZa-gf-VUT">
                                 <rect key="frame" x="320" y="389" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchChanged:" destination="eUh-uh-KyP" eventType="valueChanged" id="kNd-eH-g3R"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4QD-v4-fjE">
                                 <rect key="frame" x="320" y="438" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchChanged:" destination="eUh-uh-KyP" eventType="valueChanged" id="oFc-RU-Bgz"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kL-Ll-LqB">
                                 <rect key="frame" x="227" y="247" width="33" height="21"/>
@@ -285,6 +300,11 @@
                     <connections>
                         <outlet property="guessesSegmentedControl" destination="xAb-Lk-XCQ" id="zoc-gL-mf8"/>
                         <outletCollection property="switches" destination="XLw-mR-knF" collectionClass="NSMutableArray" id="O1P-gH-2we"/>
+                        <outletCollection property="switches" destination="Wko-xd-rby" id="uj7-pI-BYx"/>
+                        <outletCollection property="switches" destination="4P9-eP-5jQ" id="7SH-ks-jOS"/>
+                        <outletCollection property="switches" destination="Qw8-8c-mI7" id="2SK-GW-KY6"/>
+                        <outletCollection property="switches" destination="zZa-gf-VUT" id="p9u-hB-wRM"/>
+                        <outletCollection property="switches" destination="4QD-v4-fjE" id="veh-oS-jum"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkJ-pM-CPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
